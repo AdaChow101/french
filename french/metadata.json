@@ -1,0 +1,7 @@
+{
+  "name": "Lumière French",
+  "description": "一款由 AI 驱动的法语学习伴侣，具有互动课程、智能角色扮演聊天和发音练习功能。",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
