@@ -1,24 +1,18 @@
-{
-  "name": "lumiere-french-ai",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@google/genai": "^1.30.0",
-    "lucide-react": "^0.344.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "typescript": "^5.5.3",
-    "vite": "^5.4.1"
+/// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_API_KEY: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
+
+// Augment the global NodeJS namespace to include API_KEY in ProcessEnv.
+// This allows TypeScript to recognize process.env.API_KEY without redeclaring the process variable,
+// which avoids conflicts when @types/node is present.
+declare namespace NodeJS {
+  interface ProcessEnv {
+    API_KEY: string;
   }
 }
