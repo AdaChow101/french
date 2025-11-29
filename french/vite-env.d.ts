@@ -1,18 +1,24 @@
-// Explicitly declare the global process variable to fix TS2580
-// This is required because we are not using @types/node but the SDK requires process.env.API_KEY
-declare var process: {
-  env: {
-    API_KEY: string;
-    [key: string]: any;
+{
+  "name": "lumiere-french-ai",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "^1.30.0",
+    "lucide-react": "^0.344.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
   }
-};
-
-// Manually define Vite's ImportMetaEnv
-interface ImportMetaEnv {
-  readonly VITE_API_KEY: string;
-  [key: string]: any;
-}
-
-interface ImportMeta {
-  readonly env: ImportMetaEnv;
 }
